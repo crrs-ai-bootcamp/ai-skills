@@ -1,0 +1,18 @@
+# Cursor & IDE Rules (.cursorrules)
+
+## Core Principles (Andrej Karpathy Heuristics)
+1. **Think Before Coding:** Never guess ambiguous requirements. State assumptions and list affected files + TypeScript interfaces (Spec-First) before generating implementation code.
+2. **Simplicity First:** Avoid overengineering. Write minimal, clean code that directly solves the requirement.
+3. **Surgical Changes:** Modify only the files and lines required by the task. Do not touch unrelated code.
+4. **Goal-Driven Execution:** Verify changes against `npm run build` (`strict: true`) and automated tests.
+
+## Security & Secrets
+- Never read or output contents from `/secrets`, `.env`, or `.env.*` files.
+- Replace any hardcoded credentials, tokens, or URLs with `process.env.*` (Backend) or `import.meta.env.VITE_*` (Frontend).
+- Never concatenate strings in SQL queries. Always use `better-sqlite3` Prepared Statements (`?`).
+
+## TechDesk Stack Standards
+- **Strict TypeScript:** Zero `any` or `Record<string, any>`. Define domain models in `src/types/`.
+- **React Frontend:** Max ~150 lines per component. Zero inline `style={{ ... }}` (use pure TailwindCSS). Extract data fetching into `src/services/` and `src/hooks/` with `isLoading`, `error`, and `AbortController`. Use Context or composition instead of prop drilling.
+- **Express Backend:** Layer into `routes/`, `controllers/`, `services/`, and `repositories/`. Use Guard Clauses (early returns) instead of nested `if/else`. Centralize error handling in an Express error middleware.
+- **QA & Testing:** Prefer `data-testid` selectors and Page Object Model (POM). Never use hardcoded `sleep()`. Always verify state persistence across page reloads (`page.reload()`) for mutating UI actions.

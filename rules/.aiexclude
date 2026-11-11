@@ -1,0 +1,14 @@
+# Cerca Virtual de IA (.aiexclude / .cursorignore)
+# Bloqueia indexação e leitura de arquivos sensíveis pelo LLM
+
+.env
+.env.*
+*.env
+secrets/
+**/secrets/**
+*.pem
+*.key
+*.cert
+*.db
+*.db-journal
+*.db-wal
