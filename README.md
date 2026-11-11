@@ -8,6 +8,8 @@ Biblioteca central de **Regras de Sistema (`CLAUDE.md`, `.cursorrules`, `.aiexcl
 
 ```text
 ai-skills/
+├── 00-onboarding-dia-zero.md         # Guia obrigatório de preparação antes do Dia 1 (Template, OpenRouter, MCP)
+├── 01-roadmap-pos-bootcamp.md        # Trilha de 8 semanas de estudos autônomos + Prompt Show & Tell
 ├── rules/
 │   ├── CLAUDE.md                     # Regras base (Heurísticas Karpathy + Clean Arch + Segurança)
 │   ├── .cursorrules                  # Âncoras de contexto para Cursor / IDEs compatíveis
